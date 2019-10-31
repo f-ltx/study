@@ -1,7 +1,7 @@
 package cn.ltx.designmode.singleton;
 
 /**
- * Description:Ã¶¾Ùµ¥Àı£¬ÀûÓÃÃ¶¾ÙµÄinstanceÖ»ÓĞÒ»´Î£¬¹¹ÔìÖ»ÊµÀı»¯Ò»´Î
+ * Description:æšä¸¾å•ä¾‹ï¼Œåˆ©ç”¨æšä¸¾çš„instanceåªæœ‰ä¸€æ¬¡ï¼Œæ„é€ åªå®ä¾‹åŒ–ä¸€æ¬¡
  *
  * @author litianxiang
  * @date   2019-10-29

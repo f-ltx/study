@@ -1,17 +1,17 @@
 package cn.ltx.designmode.singleton;
 
 /**
- * Description:Ã¶¾Ù¶¨Òå
+ * Description:æšä¸¾å®šä¹‰
  *
  * @author litianxiang
  * @date 2019-10-29
  */
 public enum HttpEnum {
-    HTTP_200(200, "³É¹¦"),
-    HTTP_500(500, "Ê§°Ü");
+    HTTP_200(200, "æˆåŠŸ"),
+    HTTP_500(500, "å¤±è´¥");
 
     HttpEnum(Integer code, String msg) {
-        System.out.println("³õÊ¼»¯" + code);
+        System.out.println("åˆå§‹åŒ–" + code);
         this.code = code;
         this.msg = msg;
     }
