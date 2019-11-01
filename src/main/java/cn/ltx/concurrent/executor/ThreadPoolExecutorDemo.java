@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit;
  */
 public class ThreadPoolExecutorDemo {
     public static void main(String[] args) {
-        ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(1, 2, 0L, TimeUnit.SECONDS, new LinkedBlockingQueue(3));
+        ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(1, 2, 0L, TimeUnit.SECONDS, new LinkedBlockingQueue<Runnable>(3));
         //1.进入线程池
         threadPoolExecutor.execute(new ThreadTest());
         //2.大于核心线程数，进入队列。队列有1
