@@ -13,17 +13,17 @@ import java.util.concurrent.TimeUnit;
 public class ThreadPoolExecutorDemo {
     public static void main(String[] args) {
         ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(1, 2, 0L, TimeUnit.SECONDS, new LinkedBlockingQueue<Runnable>(3));
-        //1.进入线程池
+        //1.进入线程池                           pool-1-thread-1
         threadPoolExecutor.execute(new ThreadTest());
-        //2.大于核心线程数，进入队列。队列有1
+        //2.大于核心线程数，进入队列。队列有1       pool-1-thread-1
         threadPoolExecutor.execute(new ThreadTest());
-        //3.大于核心线程数，进入队列。队列有2
+        //3.大于核心线程数，进入队列。队列有2       pool-1-thread-1
         threadPoolExecutor.execute(new ThreadTest());
-        //4.大于核心线程数，进入队列。队列有3
+        //4.大于核心线程数，进入队列。队列有3       pool-1-thread-1
         threadPoolExecutor.execute(new ThreadTest());
-        //5.大于核心线程数，队列满。判断最大线程数，还可以创建
+        //5.大于核心线程数，队列满。判断最大线程数，还可以创建   pool-1-thread-2
         threadPoolExecutor.execute(new ThreadTest());
-        //6.队列满，最大线程数也超了，报错
+        //6.队列满，最大线程数也超了，报错 == 线程池溢出
 //        threadPoolExecutor.execute(new ThreadTest());
         threadPoolExecutor.shutdown();
     }
