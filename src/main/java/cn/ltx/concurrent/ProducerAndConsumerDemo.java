@@ -29,11 +29,6 @@ class Producer implements Runnable {
             synchronized (user) {
                 //flag == true 执行生产
                 if (user.flag) {
-                    try {
-                        user.wait();
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
                     if (count == 0) {
                         user.setName("老铁头");
                         user.setSex("男");
@@ -43,6 +38,13 @@ class Producer implements Runnable {
                     }
                     count = (count + 1) % 2;
                     user.flag = false;
+                } else {
+                    try {
+                        //Producer - wait
+                        user.wait();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
                 }
                 user.notify();
             }
@@ -65,13 +67,19 @@ class Consumer implements Runnable {
                 //flag == false 执行生产消费
                 if (!user.flag) {
                     try {
-                        user.wait();
-                        System.out.println(user.getName() + " - " + user.getSex());
                         Thread.sleep(1000);
+                        System.out.println(user.getName() + " - " + user.getSex());
+                        user.flag = true;
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
-                    user.flag = true;
+                } else {
+                    try {
+                        //Consumer - wait
+                        user.wait();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
                 }
                 user.notify();
             }
