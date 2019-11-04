@@ -1,4 +1,4 @@
-package cn.ltx.concurrent;
+package cn.ltx.concurrent.util;
 
 import java.util.concurrent.CountDownLatch;
 

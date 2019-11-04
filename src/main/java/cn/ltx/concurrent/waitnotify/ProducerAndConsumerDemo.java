@@ -1,4 +1,4 @@
-package cn.ltx.concurrent;
+package cn.ltx.concurrent.waitnotify;
 
 /**
  * Description:生产者与消费者
