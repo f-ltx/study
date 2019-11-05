@@ -8,6 +8,7 @@ public class Client {
         UserDaoHandler userDaoHandler = new UserDaoHandler(userDao);
         ClassLoader classLoader = userDao.getClass().getClassLoader();
         Class<?>[] interfaces = userDao.getClass().getInterfaces();
+        //4.使用Proxy.newProxyInstance生成代理对象
         IUserDao instance = (IUserDao)Proxy.newProxyInstance(classLoader, interfaces, userDaoHandler);
         instance.add();
     }

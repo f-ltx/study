@@ -6,9 +6,11 @@ import net.sf.cglib.proxy.MethodProxy;
 
 import java.lang.reflect.Method;
 
+//1.实现MethodInterceptor接口
 public class CglibProxy implements MethodInterceptor {
     private Object target;
 
+    //2.建立代理对象和真实对象的关系，使用enhancer.create
     public Object getTarget(Object target) {
         this.target = target;
         Enhancer enhancer = new Enhancer();
@@ -17,6 +19,7 @@ public class CglibProxy implements MethodInterceptor {
         return enhancer.create();
     }
 
+    //3.覆写intercept方法，methodProxy.invoke(真实对象，参数)
     @Override
     public Object intercept(Object o, Method method, Object[] objects, MethodProxy methodProxy) throws Throwable {
         System.out.println("cglib动态代理-开启事务");
