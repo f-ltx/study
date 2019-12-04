@@ -1,7 +1,11 @@
-package cn.ltx.jvm.paramoptimize;
+package cn.ltx.jvm;
 
-//使用示例:  -Xmx20m -Xms5m
-//说明： 当下Java应用最大可用内存为20M， 初始内存为5M
+/**
+ * Description:堆内存大小配置
+ * //使用示例:  -Xmx20m -Xms5m
+ * //说明： 当下Java应用最大可用内存为20M， 初始内存为5M
+ * @author litianxiang
+ */
 public class HeapTest {
     public static void main(String[] args) {
         //最大内存
